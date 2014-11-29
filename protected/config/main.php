@@ -39,8 +39,6 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
-			// extend functionality for RBAC
-			'class' => 'WebUser',
 		),
 
 	'errorHandler' => array(

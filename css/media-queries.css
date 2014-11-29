@@ -1,0 +1,33 @@
+/* Main Theme Responsive CSS fixes as necessary */
+
+/* Very large desktop */
+@media (min-width: 1200px) {
+    #main_navigation
+    {
+        width:787px;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 980px) and (max-width: 1199px) {
+    #main_navigation
+    {
+        width:787px;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+}
+
+/* Tablet and small desktop */
+@media (min-width: 768px) and (max-width: 979px) { }
+
+/* Phone and portrait tablet */
+@media (max-width: 767px) {
+}
+
+/* Phones */
+@media (max-width: 480px) { }

@@ -8,7 +8,6 @@
  * @property string $username
  * @property string $password
  * @property string $email
- * @property string $role
  *
  * The followings are the available model relations:
  * @property Comment[] $comments
@@ -31,14 +30,14 @@ class User extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('username, password, email, role', 'required'),
+			array('username, password, email', 'required'),
 			array('username', 'length', 'max'=>14),
 			array('password', 'length', 'max'=>100),
 			array('email', 'length', 'max'=>30),
 			array('email', 'email'),
-			array('role', 'length', 'max'=>10),
+			array('length', 'max'=>10),
 			// The following rule is used by search().
-			array('id, username, password, email, role', 'safe', 'on'=>'search'),
+			array('id, username, password, email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,9 +47,6 @@ class User extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			'comments' => array(self::HAS_MANY, 'Comment', 'userId'),
-			'questions' => array(self::HAS_MANY, 'Question', 'userId'),
-			'votes' => array(self::HAS_MANY, 'Vote', 'userId'),
 		);
 	}
 
@@ -64,7 +60,6 @@ class User extends CActiveRecord
 			'username' => Yii::t('user','Όνομα χρήστη'),
 			'password' => Yii::t('user','Κωδικός'),
 			'email' => Yii::t('user','Email'),
-			'role' => Yii::t('user','Ρόλος'),
 		);
 	}
 
@@ -88,24 +83,12 @@ class User extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('role',$this->role,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
 	
-	
-	public function getRoles()
-	{
-		return array(
-			'admin' => Yii::t('user','Διαχειριστής'),
-			'registered' => Yii::t('user','Απλός χρήστης'),
-			'inactive' => Yii::t('user','Ανενεργός χρήστης'),
-			'locked' => Yii::t('user','Απενεργοποιημένος χρήστης'),
-		);
-	}
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
