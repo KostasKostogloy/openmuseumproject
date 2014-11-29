@@ -25,8 +25,6 @@ class LoginForm extends CFormModel
 			array('username, password', 'required'),
             // email has to be a valid email address
 			array('username', 'email'),
-			// rememberMe needs to be a boolean
-			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
 			array('password', 'authenticate'),
 		);
@@ -38,7 +36,6 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'rememberMe'=>Yii::t('login','Να με θυμάσαι'),
 			'password' => Yii::t('user','Κωδικός'),
 			'email' => 'Email',
 			
@@ -82,7 +79,7 @@ class LoginForm extends CFormModel
         
 		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
 		{
-			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+			$duration= 0; // 30 days
 			Yii::app()->user->login($this->_identity,$duration);
 			return true;
 		}
