@@ -2,15 +2,30 @@
 <html lang="el">
     <head>
         <meta charset="utf-8">
-        <title>Open Museum Project</title>
+        <title>Open Culture Project</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/main.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/media-queries.css" media="screen">
     </head>
+                                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
     <body>
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="<?= Yii::app()->createUrl('site/index'); ?>">
+                    Open Culture Project
+                    </a>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
                     <ul id="main_navigation" class="nav navbar-nav text-center">
                         <li>
@@ -26,15 +41,10 @@
                         <li>
                             <a href="<?= Yii::app()->createUrl('site/nearme'); ?>">Τι βρίσκεται κοντά σας</a>
                         </li>
-                        <li class="navbar-header">
-                            <a class="navbar-brand" href="<?= Yii::app()->createUrl('site/index'); ?>">
-                                Open Museum Project
+                        <li class="navbar-header hidden-xs">
+                            <a class="navbar-brand" href="<?= Yii::app()->createUrl('site/index'); ?>" style="font-size: 13px;">
+                                OCP Logo
                             </a>
-                            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
                         </li>
                         <li>
                             <a href="#">Ανοιχτά Δεδομένα</a>
