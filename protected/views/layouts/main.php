@@ -25,6 +25,12 @@
                         <li>
                             <a href="<?= Yii::app()->createUrl('site/area'); ?>">Area</a>
                         </li>
+                        <li>
+                            <a href="<?= Yii::app()->createUrl('site/position'); ?>">Position</a>
+                        </li>
+                        <li>
+                            <a href="<?= Yii::app()->createUrl('site/markers'); ?>">Markers</a>
+                        </li>
                 </div>
             </div>
         </div>

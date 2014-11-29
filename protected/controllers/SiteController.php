@@ -23,7 +23,7 @@ class SiteController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','contact','about','error','captcha', 'area'),
+				'actions'=>array('index','contact','about','error','captcha', 'area','position','markers'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -105,6 +105,16 @@ class SiteController extends Controller
     public function actionArea()
     {
         $this->render('area');
+    }
+    
+    public function actionPosition()
+    {
+        $this->render('position');
+    }
+
+    public function actionMarkers()
+    {
+        $this->render('markers');
     }
 
 	/**
