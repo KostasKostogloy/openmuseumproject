@@ -24,13 +24,13 @@ $this->breadcrumbs = array(
         ?>
 
         <?php echo '<p>' . $form->labelEx($model, 'email') . '</p>'; ?>
-        <?php echo '<p>' . $form->textField($model, 'username', array('class' => 'login-form-field', 'placeholder' => Yii::t('user', 'Διεύθυνση email'))) . '</p>'; ?>
+        <?php echo '<p>' . $form->textField($model, 'username', array('class' => 'login-form-field form-control', 'placeholder' => Yii::t('user', 'Διεύθυνση email'))) . '</p>'; ?>
         <?php echo '<p>' . $form->error($model, 'username', array('class' => 'text-danger')) . '</p>'; ?>
 
 
 
         <?php echo '<p>' . $form->labelEx($model, 'password') . '</p>'; ?>
-        <?php echo '<p>' . $form->passwordField($model, 'password', array('class' => 'login-form-field', 'placeholder' => Yii::t('user', 'Ο κωδικός σας'))) . '</p>'; ?>
+        <?php echo '<p>' . $form->passwordField($model, 'password', array('class' => 'login-form-field form-control', 'placeholder' => Yii::t('user', 'Ο κωδικός σας'))) . '</p>'; ?>
         <?php echo '<p>' . $form->error($model, 'password', array('class' => 'text-danger')) . '</p>'; ?>
 
 

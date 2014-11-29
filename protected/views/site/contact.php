@@ -29,7 +29,7 @@ Yii::app()->clientScript->registerScriptFile(
 	),
 )); ?>
 	
-	<p class="note"><?=Yii::t('form','Τα πεδία με ')?><span class="required">*</span><?=Yii::t('form',' είναι υποχρεωτικά.')?></p>
+	<p class="text-danger"><?=Yii::t('form','Τα πεδία με ')?><span class="required">*</span><?=Yii::t('form',' είναι υποχρεωτικά.')?></p>
 
 	<?php echo $form->errorSummary($model); ?>
 

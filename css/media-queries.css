@@ -4,7 +4,7 @@
 @media (min-width: 1200px) {
     #main_navigation
     {
-        width:653px;
+        width:726px;
         margin-left: auto;
         margin-right: auto;
         float: none;
@@ -15,7 +15,7 @@
 @media (min-width: 980px) and (max-width: 1199px) {
     #main_navigation
     {
-        width:653px;
+        width:726px;
         margin-left: auto;
         margin-right: auto;
         float: none;
@@ -23,7 +23,13 @@
 }
 
 /* Tablet and small desktop */
-@media (min-width: 768px) and (max-width: 979px) { }
+@media (min-width: 768px) and (max-width: 979px) { 
+    #main_navigation
+    {
+        font-size: 13px !important;
+    }
+
+}
 
 /* Phone and portrait tablet */
 @media (max-width: 767px) {

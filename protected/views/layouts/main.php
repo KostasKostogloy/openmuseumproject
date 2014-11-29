@@ -8,17 +8,12 @@
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/main.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/media-queries.css" media="screen">
     </head>
-                                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
     <body>
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand visible-xs" href="<?= Yii::app()->createUrl('site/index'); ?>">
-                    Open Culture Project
+                        <img src="<?=Yii::app()->baseUrl;?>/images/logo_small.png" alt="Logo" title="Open Culture Project" />
                     </a>
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span>
@@ -30,7 +25,7 @@
                     <ul id="main_navigation" class="nav navbar-nav text-center">
                         <li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Αναζήτηση <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i> Αναζήτηση <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Μουσείων</a></li>
                                 <li><a href="#">Αιθουσών Τέχνης</a></li>
@@ -40,18 +35,18 @@
                         </li>
                         </li>
                         <li>
-                            <a href="<?= Yii::app()->createUrl('site/nearme'); ?>">Τι βρίσκεται κοντά σας</a>
+                            <a href="<?= Yii::app()->createUrl('site/nearme'); ?>"><i class="glyphicon glyphicon-map-marker"></i> Τι βρίσκεται κοντά σας</a>
                         </li>
-                        <li class="navbar-header hidden-xs">
-                            <a class="navbar-brand" href="<?= Yii::app()->createUrl('site/index'); ?>" style="font-size: 13px;">
-                                OCP Logo
+                        <li class="navbar-header hidden-xs text-center">
+                            <a href="<?= Yii::app()->createUrl('site/index'); ?>" style="font-size: 13px;">
+                                <img src="<?=Yii::app()->baseUrl;?>/images/logo_small.png" alt="Logo" title="Open Culture Project" />
                             </a>
                         </li>
                         <li>
-                            <a href="#">Ανοιχτά Δεδομένα</a>
+                            <a href="#"><i class="glyphicon glyphicon-open"></i> Ανοιχτά Δεδομένα</a>
                         </li>
                         <li>
-                            <a href="<?= Yii::app()->createUrl('site/contact'); ?>">Επικοινωνία</a>
+                            <a href="<?= Yii::app()->createUrl('site/contact'); ?>"><i class="glyphicon glyphicon-envelope"></i> Επικοινωνία</a>
                         </li>
                         <!--
                         <li>
