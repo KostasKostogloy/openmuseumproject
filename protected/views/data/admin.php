@@ -2,9 +2,6 @@
 /* @var $this DataController */
 /* @var $num_records */
 
-$this->breadcrumbs=array(
-	'Data'=>array('admin'),
-);
 ?>
 
 <h1 class="text-primary"><?=Yii::t('data','Διαχείρηση Δεδομένων')?></h1>

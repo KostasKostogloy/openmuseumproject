@@ -2,10 +2,6 @@
 /* @var $this DataController */
 /* @var $model ImportedData */
 
-$this->breadcrumbs=array(
-    'Data',
-);
-
 ?>
 
 <h1 class="text-primary"><?=Yii::t('data', 'Διαχείρηση Δεδομένων')?></h1>
@@ -18,7 +14,6 @@ $this->breadcrumbs=array(
     'dataProvider'=>$model->search(),
     'filter'=>$model,
     'columns'=>array(
-        'TNAME',
         'NAMEGRK',
         'ADDRESS',
         'PHONE',
