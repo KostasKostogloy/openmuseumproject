@@ -33,8 +33,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Αναζήτηση <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Μουσείων</a></li>
-                                <li><a href="#">Μνημείων</a></li>
-                                <li><a href="#">Γκάλερι Τέχνης</a></li>
+                                <li><a href="#">Αιθουσών Τέχνης</a></li>
+                                <li><a href="#">Θεάτρων</a></li>
+                                <li><a href="#">Πολιτιστικών Ιδρυμάτων</a></li>
                             </ul>
                         </li>
                         </li>
