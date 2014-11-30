@@ -20,12 +20,13 @@ class UserIdentity extends CUserIdentity
 		$encryption= new Encryption;
         if($user===null)
             $this->errorCode=self::ERROR_USERNAME_INVALID;
-        else if($encryption->validate_password($this->password, $user->password))
+        else if(!$encryption->validate_password($this->password, $user->password))
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
         else
         {
             $this->id=$user->id;
             $this->errorCode=self::ERROR_NONE;
+            return true;
         }
         return !$this->errorCode;
     }

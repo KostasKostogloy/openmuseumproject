@@ -211,11 +211,10 @@ class UserController extends Controller {
             $model->attributes = $_POST['LoginForm'];
 
             $encryption = new Encryption;
-            $model->password = $encryption->create_hash($model->password);
 
             // validate user input and redirect administrator to admin/site/index and others to previous page
             if ($model->validate() && $model->login()) {
-                $this->redirect(array('user/index'));
+                $this->redirect('index');
             }
         }
         $model->password = null;

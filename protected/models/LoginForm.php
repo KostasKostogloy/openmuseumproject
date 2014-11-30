@@ -9,7 +9,6 @@ class LoginForm extends CFormModel
 {
 	public $username;
 	public $password;
-	public $rememberMe;
 
 	private $_identity;
 
@@ -23,7 +22,7 @@ class LoginForm extends CFormModel
 		return array(
 			// username and password are required
 			array('username, password', 'required'),
-            // email has to be a valid email address
+                        // email has to be a valid email address
 			array('username', 'email'),
 			// password needs to be authenticated
 			array('password', 'authenticate'),
@@ -46,23 +45,20 @@ class LoginForm extends CFormModel
 	 * Authenticates the password.
 	 * This is the 'authenticate' validator as declared in rules().
 	 */
-	public function authenticate($attribute,$params)
+	public function authenticate()
 	{
-		if(!$this->hasErrors())
-		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
+            $this->_identity=new UserIdentity($this->username,$this->password);
+            if(!$this->_identity->authenticate())
             {
-				if ($this->_identity->errorCode === UserIdentity::ERROR_NOT_ACTIVE )
-				{
-					$this->addError('username','This user account is disabled. Contact an administrator.');
-				}
-				else
-				{
-					$this->addError('password','Incorrect username or password.');
-				}
+                if ($this->_identity->errorCode === UserIdentity::ERROR_NOT_ACTIVE )
+                {
+                        $this->addError('username','This user account is disabled. Contact an administrator.');
+                }
+                else
+                {
+                        $this->addError('password','Incorrect username or password.');
+                }
             }
-		}
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <?php
 /* @var $this UserController */
-/* @var $model User */
+/* @var $model LoginForm */
 ?>
 
 <div class="row">
