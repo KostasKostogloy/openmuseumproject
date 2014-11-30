@@ -9,7 +9,7 @@
         <div class="well well-sm">
             <ul class="nav nav-pills nav-stacked" id="yw1">
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-dashboard"></span> Διαχείριση</a>
+                    <a href="<?= Yii::app()->createUrl('user/index') ?>"><span class="glyphicon glyphicon-dashboard"></span> Διαχείριση</a>
                 </li>
                 <li>
                     <a href="<?= Yii::app()->createUrl('institutions/index') ?>"><span class="glyphicon glyphicon-book"></span> Ινστιτούτων</a>
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="col-md-9">
-        <br />
+        <a class="btn btn-success btn-sm pull-left" href="<?=Yii::app()->createUrl('user/register');?>"><i class="glyphicon glyphicon-plus-sign"></i> Προσθήκη Χρήστη</a>
         <?php
         $this->widget('zii.widgets.grid.CGridView', array(
             'id' => 'user-grid',

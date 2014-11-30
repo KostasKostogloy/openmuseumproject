@@ -106,6 +106,6 @@ Yii::app()->clientScript->registerScript('markers','
     </div>
 </div>
 
-<div class="row">
+<div class="col-lg-12">
     <div id="map_canvas"></div>
 </div>

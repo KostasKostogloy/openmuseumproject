@@ -12,8 +12,8 @@
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="<?= Yii::app()->createUrl('site/index'); ?>">
-                        <img src="<?=Yii::app()->baseUrl;?>/images/logo_small.png" alt="Logo" title="Open Culture Project" />
+                    <a class="navbar-brand visible-xs" style="padding: 3px 0 0 30px;" href="<?= Yii::app()->createUrl('site/index'); ?>">
+                        <img src="<?=Yii::app()->baseUrl;?>/images/logo_medium.png" alt="Logo" title="Open Culture Project" />
                     </a>
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span>
@@ -23,10 +23,9 @@
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
                     <ul id="main_navigation" class="nav navbar-nav text-center">
-                        <li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i> Αναζήτηση <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
+                            <ul id="search-dropdown" class="dropdown-menu">
                                 <li><a href="#">Μουσείων</a></li>
                                 <li><a href="#">Αιθουσών Τέχνης</a></li>
                                 <li><a href="#">Θεάτρων</a></li>
@@ -38,8 +37,8 @@
                             <a href="<?= Yii::app()->createUrl('site/nearme'); ?>"><i class="glyphicon glyphicon-map-marker"></i> Τι βρίσκεται κοντά σας</a>
                         </li>
                         <li class="navbar-header hidden-xs text-center">
-                            <a href="<?= Yii::app()->createUrl('site/index'); ?>" style="font-size: 13px;">
-                                <img src="<?=Yii::app()->baseUrl;?>/images/logo_small.png" alt="Logo" title="Open Culture Project" />
+                            <a href="<?= Yii::app()->createUrl('site/index'); ?>" style="font-size: 13px;padding:5px;">
+                                <img src="<?=Yii::app()->baseUrl;?>/images/logo_medium.png" alt="Logo" title="Open Culture Project" />
                             </a>
                         </li>
                         <li>
@@ -62,17 +61,16 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="margin-top:20px;">
             <?= $content; ?>
             <footer>
-                <div class="row">
                     <div class="col-lg-12">
                         <ul class="list-unstyled">
-                            <li class="pull-left"><a href="<?= Yii::app()->createUrl('user/login'); ?>" >Διαχείριση</a></li>
-                            <li class="pull-right"><a href="#top">Back to top</a></li>
+                            <li class="pull-left"><a class="btn btn-sm btn-default" href="<?= Yii::app()->createUrl('user/login'); ?>" >Διαχείριση</a></li>
+                            <li class="pull-right"><a class="btn btn-sm btn-info" href="#top">^</a></li>
                         </ul>
                     </div>
-                </div>
+                <div class="clearfix"></div>
             </footer>
         </div>
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

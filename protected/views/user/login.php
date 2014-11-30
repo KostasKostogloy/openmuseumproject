@@ -7,6 +7,7 @@ $this->pageTitle = Yii::app()->name . ' - ' . Yii::t('user', 'Sign in');
 $this->breadcrumbs = array(
     Yii::t('user', 'Sign in'),
 );
+
 ?>
 
 <h2 class="text-primary text-center"><?php echo Yii::t('user', 'Σύνδεση'); ?></h2>
