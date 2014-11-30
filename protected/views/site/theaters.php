@@ -8,16 +8,16 @@ $cs->registerScript('popups_etc',
     $(\'.bs-component [data-toggle="tooltip"]\').tooltip();
 ',  CClientScript::POS_LOAD);
 
-$institutes = Institution::model()->findAll('latitude != "" AND longitude != "" AND NEWSUBCAT = "ΘΕΑΤΡΑ"');
+$institutes = Institution::model()->findAll('POINT_X != "" AND POINT_Y != "" AND NEWSUBCAT = "ΘΕΑΤΡΑ"');
 $LatLng = '';
 $marker = '';
 $markerContent = '';
 $infowindow= '';
 foreach ($institutes as $key => $institute)
 {
-    $icon = Yii::app()->baseUrl . '/images/museum_paintings.png';
+    $icon = Yii::app()->baseUrl . '/images/theater.png';
     
-    $LatLng .= 'var LatLng' . $key . ' = new google.maps.LatLng(' . $institute->latitude . ',' . $institute->longitude . ');
+    $LatLng .= 'var LatLng' . $key . ' = new google.maps.LatLng(' . $institute->POINT_X . ',' . $institute->POINT_Y . ');
     ';
     $marker .= 'marker' . $key . ' = new google.maps.Marker({position: LatLng' . $key . ', map: map, title: \''.$institute->NAMEGRK.'\',icon: "'.$icon.'"});
     ';
@@ -66,9 +66,11 @@ Yii::app()->clientScript->registerScript('markers','
     <div class="row">
     <?php
     $institution = new Institution;
+    $dataProvider = $institution->searchTheaters();
+    $dataProvider->sort->defaultOrder='thumbnail DESC';
     $this->widget('zii.widgets.CListView', array(
             'id' => 'institution-grid',
-            'dataProvider'=> $institution->searchTheaters(),
+            'dataProvider'=> $dataProvider,
             'itemView'=>'_institution',
             'itemsCssClass'=> 'row',
             'pager' => array(
