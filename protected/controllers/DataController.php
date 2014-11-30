@@ -2,13 +2,13 @@
 
 class DataController extends Controller {
 
-    public function actionIndex() {
-        $model = new ImportedData();
-        
-        $this->render('index', array('model' => $model));
-    }
+     /**
+     * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+     * using two-column layout. See 'protected/views/layouts/column2.php'.
+     */
+    public $layout = 'admin';
     
-    public function actionAdmin() {
+    public function actionIndex() {
         
         // The maximum execution time, in seconds. If set to zero, no time limit is imposed.
         set_time_limit(0);
@@ -46,7 +46,7 @@ class DataController extends Controller {
             dbase_close($dbf);
         }
 
-        $this->render('admin', array('num_records' => $num_records));
+        $this->render('index', array('num_records' => $num_records));
     }
     
 }
