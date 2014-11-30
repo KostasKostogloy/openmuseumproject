@@ -4,9 +4,12 @@
         <meta charset="utf-8">
         <title>Open Culture Project</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/main.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/media-queries.css" media="screen">
+        <?php Yii::app()->clientScript->scriptMap=array( 'jquery.js'=>'https://code.jquery.com/jquery-1.10.2.min.js',);
+        ?>
     </head>
     <body>
         <div class="navbar navbar-default navbar-fixed-top">
@@ -26,12 +29,11 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i> Αναζήτηση <b class="caret"></b></a>
                             <ul id="search-dropdown" class="dropdown-menu">
-                                <li><a href="#">Μουσείων</a></li>
-                                <li><a href="#">Αιθουσών Τέχνης</a></li>
-                                <li><a href="#">Θεάτρων</a></li>
-                                <li><a href="#">Πολιτιστικών Ιδρυμάτων</a></li>
+                                <li><a href="<?=  Yii::app()->createUrl('site/museums');?>">Μουσείων</a></li>
+                                <li><a href="<?=  Yii::app()->createUrl('site/art');?>">Αιθουσών Τέχνης</a></li>
+                                <li><a href="<?=  Yii::app()->createUrl('site/theaters');?>">Θεάτρων</a></li>
+                                <li><a href="<?=  Yii::app()->createUrl('site/idrimata');?>">Πολιτιστικών Ιδρυμάτων</a></li>
                             </ul>
-                        </li>
                         </li>
                         <li>
                             <a href="<?= Yii::app()->createUrl('site/nearme'); ?>"><i class="glyphicon glyphicon-map-marker"></i> Τι βρίσκεται κοντά σας</a>
@@ -58,6 +60,7 @@
                             <a href="<?= Yii::app()->createUrl('site/markers'); ?>">Markers</a>
                         </li>
                         -->
+                    </ul>
                 </div>
             </div>
         </div>
@@ -73,7 +76,6 @@
                 <div class="clearfix"></div>
             </footer>
         </div>
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="<?= Yii::app()->baseUrl ?>/js/bootstrap.min.js"></script>
     </body>
 </html>

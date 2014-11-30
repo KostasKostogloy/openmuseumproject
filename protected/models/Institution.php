@@ -38,7 +38,7 @@ class Institution extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('GID, NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, abstract, thumbnail, website, wikipedia, latitude, longitude', 'required'),
+			array('GID, NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, abstract, thumbnail, website, wikipedia, latitude, longitude', 'search'),
 			array('GID', 'numerical', 'integerOnly'=>true),
 			array('NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, thumbnail, website, wikipedia', 'length', 'max'=>256),
 			array('latitude, longitude', 'length', 'max'=>32),
@@ -119,9 +119,62 @@ class Institution extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+                        'pagination' => array('pageSize'=>4)
 		));
 	}
+	public function searchMuseums()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
 
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('NEWSUBCAT','ΜΟΥΣΕΙΑ',true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+                        'pagination' => array('pageSize'=>4)
+		));
+	}
+	public function searchTheaters()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('NEWSUBCAT','ΘΕΑΤΡΑ',true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+                        'pagination' => array('pageSize'=>4)
+		));
+	}
+	public function searchIdrimata()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('NEWSUBCAT','ΠΟΛΙΤΙΣΤΙΚΑ ΙΔΡΥΜΑΤΑ - ΦΟΡΕΙΣ',true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+                        'pagination' => array('pageSize'=>4)
+		));
+	}
+	public function searchArt()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('NEWSUBCAT','ΑΙΘΟΥΣΕΣ ΤΕΧΝΗΣ',true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+                        'pagination' => array('pageSize'=>4)
+		));
+	}
+        
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
