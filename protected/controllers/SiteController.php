@@ -21,7 +21,7 @@ class SiteController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'contact', 'about', 'error', 'captcha', 'area', 'position', 'markers', 'nearme'),
+                'actions' => array('index', 'museums', 'art', 'theaters', 'idrimata', 'contact', 'about', 'error', 'captcha', 'area', 'position', 'markers', 'nearme'),
                 'users' => array('*'),
             ),
             array('deny', // deny all users
@@ -56,6 +56,26 @@ class SiteController extends Controller {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
         $this->render('index');
+    }
+    public function actionMuseums() {
+        // renders the view file 'protected/views/site/index.php'
+        // using the default layout 'protected/views/layouts/main.php'
+        $this->render('museums');
+    }
+    public function actionArt() {
+        // renders the view file 'protected/views/site/index.php'
+        // using the default layout 'protected/views/layouts/main.php'
+        $this->render('art');
+    }
+    public function actionTheaters() {
+        // renders the view file 'protected/views/site/index.php'
+        // using the default layout 'protected/views/layouts/main.php'
+        $this->render('theaters');
+    }
+    public function actionIdrimata() {
+        // renders the view file 'protected/views/site/index.php'
+        // using the default layout 'protected/views/layouts/main.php'
+        $this->render('idrimata');
     }
 
     /**

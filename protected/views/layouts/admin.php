@@ -12,7 +12,6 @@
         <div class="container">
             <?= $content; ?>
         </div>
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="<?= Yii::app()->baseUrl ?>/js/bootstrap.min.js"></script>
     </body>
 </html>

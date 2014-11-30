@@ -7,22 +7,60 @@ $longitude2 = 22.9346466;
 $latitude3 = 40.6522526;
 $longitude3 = 22.9253768;
 
+$institutes = Institution::model()->findAll('latitude != "" AND longitude != ""');
+$LatLng = '';
+$marker = '';
+$markerContent = '';
+$infowindow= '';
+foreach ($institutes as $key => $institute)
+{
+    switch ($institute->NEWSUBCAT):
+        case 'ΑΙΘΟΥΣΕΣ ΤΕΧΝΗΣ':
+            $icon = Yii::app()->baseUrl . '/images/museum_paintings.png';
+            break;
+        case 'ΘΕΑΤΡΑ':
+            $icon = Yii::app()->baseUrl . '/images/theater.png';
+            break;
+        case 'ΜΟΥΣΕΙΑ':
+            $icon = Yii::app()->baseUrl . '/images/monument.png';
+            break;
+        case 'ΠΟΛΙΤΙΣΤΙΚΑ ΙΔΡΥΜΑΤΑ - ΦΟΡΕΙΣ':
+            $icon = Yii::app()->baseUrl . '/images/museum_crafts.png';
+            break;
+    endswitch;
+    
+    $LatLng .= 'var LatLng' . $key . ' = new google.maps.LatLng(' . $institute->latitude . ',' . $institute->longitude . ');
+    ';
+    $marker .= 'marker' . $key . ' = new google.maps.Marker({position: LatLng' . $key . ', map: map, title: \''.$institute->NAMEGRK.'\',icon: "'.$icon.'"});
+    ';
+    $infowindow .= 'var infowindow'.$key.' = new google.maps.InfoWindow({
+        content: "<h4>'.$institute->NAMEGRK.'</h4>'.$institute->abstract.'"
+    });
+    ';
+    $markerContent .= ' google.maps.event.addListener(marker'.$key.', \'click\', function() {
+        if (openwindow) {
+            openwindow.close();
+        }
+        infowindow'.$key.'.open(map,marker'.$key.');
+        openwindow = infowindow'.$key.';
+      });
+    ';
+}
+
 $cs = Yii::app()->clientScript;
 Yii::app()->clientScript->registerScriptFile('http://maps.google.com/maps/api/js?sensor=true&libraries=drawing&dummy=.js');
 $cs->registerScript('check_position',
 '
 var drawingManager;
 var map; // Global declaration of the map
-var marker = null;
-var marker1 = null;
-var marker2 = null;
-var marker3 = null;
+var openwindow;
 function initializeMap() {
     var myOptions = {
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     }
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    '.$LatLng . $marker.$infowindow.$markerContent.'
     // Try HTML5 geolocation
   if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -30,7 +68,6 @@ function initializeMap() {
                                            position.coords.longitude);
 
           marker = new google.maps.Marker({position: pos, map: map,icon: "'.Yii::app()->baseUrl.'/images/map_guy.png"});
-
           map.setCenter(pos);
         }, function() {
           handleNoGeolocation(true);
@@ -39,12 +76,6 @@ function initializeMap() {
         // Browser doesn\'t support Geolocation
         handleNoGeolocation(false);
       }
-        var myLatlng1 = new google.maps.LatLng(' . $latitude . ',' . $longitude . ');
-        var myLatlng2 = new google.maps.LatLng(' . $latitude2 . ',' . $longitude2 . ');
-        var myLatlng3 = new google.maps.LatLng(' . $latitude3 . ',' . $longitude3 . ');
-        marker1 = new google.maps.Marker({position: myLatlng1, map: map,icon: "'.Yii::app()->baseUrl.'/images/monument.png"});
-        marker2 = new google.maps.Marker({position: myLatlng2, map: map,icon: "'.Yii::app()->baseUrl.'/images/arch.png"});
-        marker3 = new google.maps.Marker({position: myLatlng3, map: map,icon: "'.Yii::app()->baseUrl.'/images/monument.png"});
 
 }
 initializeMap();   
