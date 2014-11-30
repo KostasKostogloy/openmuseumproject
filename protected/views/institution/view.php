@@ -1,7 +1,7 @@
 <?php
 /* @var $this InstitutionController */
 /* @var $model Institution */
-
+$string = (!empty($model->POINT_X) && !empty($model->POINT_Y)) ? ' initializeMap();' :" ";
 Yii::app()->clientScript->registerScriptFile('http://maps.google.com/maps/api/js?sensor=false&libraries=drawing&dummy=.js');
 Yii::app()->clientScript->registerScript('markers','
     var drawingManager;
@@ -17,7 +17,7 @@ Yii::app()->clientScript->registerScript('markers','
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         marker = new google.maps.Marker({position: myLatlng, map: map});
     }
-   '.(!empty($model->POINT_X) && !empty($model->POINT_Y)) ? ' initializeMap();':"".'
+   '.$string.'
 ', CClientScript::POS_LOAD);
 
 if (!empty($model->POINT_X) && !empty($model->POINT_Y)){
