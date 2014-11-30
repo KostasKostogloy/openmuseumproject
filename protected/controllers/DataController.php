@@ -41,9 +41,6 @@ class DataController extends Controller {
                 
                 // save model
                 $model->save();
-                        
-                // save all records as an array
-                $all_records[] = $record;
             }
             
             dbase_close($dbf);
@@ -51,31 +48,5 @@ class DataController extends Controller {
 
         $this->render('admin', array('num_records' => $num_records));
     }
-
-    // Uncomment the following methods and override them if needed
-    /*
-      public function filters()
-      {
-      // return the filter configuration for this controller, e.g.:
-      return array(
-      'inlineFilterName',
-      array(
-      'class'=>'path.to.FilterClass',
-      'propertyName'=>'propertyValue',
-      ),
-      );
-      }
-
-      public function actions()
-      {
-      // return external action classes, e.g.:
-      return array(
-      'action1'=>'path.to.ActionClass',
-      'action2'=>array(
-      'class'=>'path.to.AnotherActionClass',
-      'propertyName'=>'propertyValue',
-      ),
-      );
-      }
-     */
+    
 }
