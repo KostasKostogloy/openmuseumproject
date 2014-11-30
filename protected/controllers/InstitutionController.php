@@ -30,7 +30,7 @@ class InstitutionController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create', 'update', 'admin' and 'delete' actions
-                'actions' => array('create', 'update', 'admin', 'delete'),
+                'actions' => array('create', 'update', 'admin', 'delete', 'wikipedia'),
                 'users' => array('@'),
             ),
             array('deny', // deny all users
@@ -154,6 +154,29 @@ class InstitutionController extends Controller {
         $this->render('admin', array('num_records' => $num_records));
     }
 
+    /*
+     * Gets data from dbpedia
+     */
+    public function actionWikipedia($id)
+    {
+        $model = Institution::model()->findByPk($id);
+        
+        $dbpedia_url = urlencode($model->dbpedia_url);
+        
+        $url = "http://el.dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fel.dbpedia.org&query=select+%3Fabstract+%3Fthumbnail%0D%0Awhere+{%0D%0A+++%3C".$dbpedia_url."%3E+dbpedia-owl%3Aabstract+%3Fabstract+.%0D%0A+++%3C".$dbpedia_url."%3E+dbpedia-owl%3Athumbnail+%3Fthumbnail+.%0D%0A}&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
+
+        $json = file_get_contents($url);
+        $obj = json_decode($json);
+        $bindings = $obj->results->bindings;
+        
+        $binding_abstract = $bindings[0]->abstract->value;
+        $binding_thumbnail = $bindings[0]->thumbnail->value;
+        $model->abstract = $binding_abstract;
+        $model->thumbnail = $binding_thumbnail;
+        $model->save();
+        
+        $this->render('wikipedia', array('model' => $model));
+    }
     /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.

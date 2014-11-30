@@ -38,7 +38,7 @@ class Institution extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('GID, NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, abstract, thumbnail, website, wikipedia, latitude, longitude', 'required'),
+			array('GID, NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, abstract, thumbnail, website, wikipedia, latitude, longitude', 'safe'),
 			array('GID', 'numerical', 'integerOnly'=>true),
 			array('NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, thumbnail, website, wikipedia', 'length', 'max'=>256),
 			array('latitude, longitude', 'length', 'max'=>32),
