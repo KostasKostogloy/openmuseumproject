@@ -20,16 +20,17 @@ Yii::app()->clientScript->registerScript('markers','
     }
     initializeMap();
 ', CClientScript::POS_LOAD);
-}
-?>
 
+?>
 <div class="col-lg-12" id="map_canvas">
     
 </div>
-
+<?php
+}
+?>
 <div class="col-lg-6 text-center">
     <h3 class="text-primary"><?=$model->NAMEGRK?></h3>
-    <img class="img-responsive img-thumbnail" src="<?=$model->thumbnail;?>"/>
+    <img class="img-responsive img-thumbnail" src="<?=($model->thumbnail == NULL)? Yii::app()->baseUrl.'/images/placeholder.png':$model->thumbnail;?>"/>
     <p class="text-info"><?=$model->abstract;?></p>
     <p>
         <span class="label label-primary"><?=$model->DIMOS?></span>
@@ -38,7 +39,7 @@ Yii::app()->clientScript->registerScript('markers','
     </p>
 </div>
 
-<div class="col-lg-6">
+<div class="col-lg-6" style="padding-top:20px;">
     <?php if (!empty($model->ADDRESS)):?>
         <div class="panel panel-primary">
             <div class="panel-heading">

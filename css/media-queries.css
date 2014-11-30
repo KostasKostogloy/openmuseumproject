@@ -33,6 +33,20 @@
 
 /* Phone and portrait tablet */
 @media (max-width: 767px) {
+    .modal-body img
+    {
+        width: 100%;
+    }
+    
+    .dropdown-menu
+    {
+        text-align: center !important;
+    }
+    
+    .dropdown-menu a
+    {
+        padding:5px;
+    }
 }
 
 @media (min-width: 767px) {
@@ -40,7 +54,6 @@
     {
         margin-top: -20px;
     }
-    
 }
 
 /* Phones */
