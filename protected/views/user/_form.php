@@ -24,7 +24,6 @@
 		</div>
 	</div>
 
-	<?php if ($this->action->id == 'create'):?>
 	<div class="form-group row">
 		<?php echo $form->labelEx($model,'password',array('for' => 'User_password','class'=> 'col-sm-2')); ?>
 		<div class="col-sm-10">
@@ -32,21 +31,12 @@
 			<?php echo $form->error($model,'password'); ?>
 		</div>
 	</div>
-	<?php endif;?>
 
 	<div class="form-group row">
 		<?php echo $form->labelEx($model,'email',array('for' => 'User_email','class'=> 'col-sm-2')); ?>
 		<div class="col-sm-10">
 			<?php echo $form->textField($model,'email',array('size'=>14,'maxlength'=>14,'class'=>'form-control')); ?>
 			<?php echo $form->error($model,'email'); ?>
-		</div>
-	</div>
-
-	<div class="form-group row">
-		<?php echo $form->labelEx($model,'role',array('for' => 'User_role','class'=> 'col-sm-2')); ?>
-		<div class="col-sm-10">
-			<?php echo $form->dropDownList($model,'role',$model->getRoles(),array('class'=>'form-control')); ?>
-			<?php echo $form->error($model,'role'); ?>
 		</div>
 	</div>
 

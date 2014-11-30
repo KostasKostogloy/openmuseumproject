@@ -35,7 +35,6 @@ class User extends CActiveRecord
 			array('password', 'length', 'max'=>100),
 			array('email', 'length', 'max'=>30),
 			array('email', 'email'),
-			array('length', 'max'=>10),
 			// The following rule is used by search().
 			array('id, username, password, email', 'safe', 'on'=>'search'),
 		);
@@ -88,8 +87,9 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-	
-	/**
+        
+
+                /**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.

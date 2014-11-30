@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 30 Νοε 2014 στις 00:45:11
+-- Χρόνος δημιουργίας: 30 Νοε 2014 στις 01:02:44
 -- Έκδοση διακομιστή: 5.6.21
 -- Έκδοση PHP: 5.5.19
 
@@ -274,6 +274,27 @@ INSERT INTO `institutions` (`id`, `GID`, `NAMEGRK`, `ADDRESS`, `PHONE`, `DIMOS`,
 (87, 1640, 'ΔΗΜΟΤΙΚΟ ΘΕΑΤΡΟ ΚΗΠΟΥ  (ΠΡΟΣΒΑΣΗ ΑΜΕΑ)', 'Έναντι ΧΑΝΘ', '2310260000', 'ΘΕΣΣΑΛΟΝΙΚΗ', 'ΠΟΛΙΤΙΣΜΟΣ', 'ΘΕΑΤΡΑ', '', '', '', '', '', '', ''),
 (88, 1641, 'ΘΕΑΤΡΟ ΠΑΡΚΟΥ Ν. ΕΛΒΕΤΙΑΣ  (ΠΡΟΣΒΑΣΗ ΑΜΕΑ)', '', '2310300000', 'ΘΕΣΣΑΛΟΝΙΚΗ', 'ΠΟΛΙΤΙΣΜΟΣ', 'ΘΕΑΤΡΑ', '', '', '', '', '', '', ''),
 (89, 1643, 'ΚΕΝΤΡΟ ΙΣΤΟΡΙΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ  (ΠΡΟΣΒΑΣΗ ΑΜΕΑ)', 'Μέγαρο Μπίλλη, Πλατεία Ιπποδρομίου', '2310260000', 'ΘΕΣΣΑΛΟΝΙΚΗ', 'ΠΟΛΙΤΙΣΜΟΣ', 'ΠΟΛΙΤΙΣΤΙΚΑ ΙΔΡΥΜΑΤΑ - ΦΟΡΕΙΣ', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(14) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES
+(1, 'codependency', 'sha256:1000:KsTz+Njw+LpNe3Dgineobnq7KMymMXvC:CuO5D+tOodK2WbN9RYSzCvDSN0mAILJ7', 'kostaskostogloy@outlook.com'),
+(2, 'Mario Shtika', 'sha256:1000:WNrWLv4q5PA9n02JOWpOyQqZv2oYTSrG:z7/8SSqKpEGKRFtyaOtQcIKug7aAbJVC', 'marioshtika@gmail.com');
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
