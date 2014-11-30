@@ -11,6 +11,12 @@
     <body style="padding-top:20px;">
         <div class="container">
             <?= $content; ?>
+            
+            <div class="col-lg-12">
+                <hr />
+               <img class="img-thumbnail pull-right" src="<?=Yii::app()->baseUrl?>/images/logo_medium.png" />
+                <span>Copyright 2014&copy;<br /> Created by Kostas Kostoglou & Mario Shtika</span>
+           </div>
         </div>
         <script src="<?= Yii::app()->baseUrl ?>/js/bootstrap.min.js"></script>
     </body>

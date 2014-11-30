@@ -108,9 +108,10 @@ Yii::app()->clientScript->registerScript('markers','
     <?php
     $institution = new Institution;
     $dataProvider = $institution->search();
+    $dataProvider->sort->defaultOrder='thumbnail DESC';
     $this->widget('zii.widgets.CListView', array(
             'id' => 'institution-grid',
-            'dataProvider'=> $institution->search()  ,
+            'dataProvider'=> $dataProvider  ,
             'itemView'=>'_institution',
             'itemsCssClass'=> 'row',
             'pager' => array(

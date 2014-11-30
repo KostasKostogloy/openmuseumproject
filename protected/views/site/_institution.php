@@ -3,8 +3,8 @@
         <img src="<?=($data->thumbnail == NULL)? Yii::app()->baseUrl.'/images/placeholder.png':$data->thumbnail;?>" />
     </div>
     <div class="col-lg-6">
-        <h3><?=$data->NAMEGRK;?></h3>
-        <p><?=$data->abstract;?></p>
+        <h3 style="margin-top:0;"><a href="<?=Yii::app()->createUrl('institute/view',array('id'=>$data->id))?>"><?=$data->NAMEGRK;?></a></h3>
+        <p><?=(strlen($data->abstract) > 600) ? substr($data->abstract,0,600).'...' : $data->abstract;?></p>
     </div>
 </div>
 

@@ -4,16 +4,17 @@
 ?>
 
 <div class="row">
-    <h2 class="text-center text-primary">Διαχείριση Χρηστών</h2>
     <div class="col-md-3">
         <?php $this->renderPartial('_sidebar');?>
     </div>
     <div class="col-md-9">
-        <a class="btn btn-success btn-sm pull-left" href="<?=Yii::app()->createUrl('user/register');?>"><i class="glyphicon glyphicon-plus-sign"></i> Προσθήκη Χρήστη</a>
+        <a class="btn btn-success btn-sm pull-right" href="<?=Yii::app()->createUrl('user/register');?>"><i class="glyphicon glyphicon-plus-sign"></i> Προσθήκη Χρήστη</a>
+        <h3 class="text-primary" style="margin-top:0;">Διαχείριση Χρηστών</h3>
+        <hr />
         <?php
         $this->widget('zii.widgets.grid.CGridView', array(
             'id' => 'user-grid',
-            'itemsCssClass' => 'table table-striped table-condensed table-bordered',
+            'itemsCssClass' => 'table table-striped',
             'dataProvider' => $model->search(),
             'filter' => $model,
             'columns' => array(
@@ -30,4 +31,3 @@
         ?>
     </div>
 </div>
-

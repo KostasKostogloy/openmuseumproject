@@ -39,6 +39,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+                        'loginUrl' => array('user/login'),
 		),
 
 	'errorHandler' => array(
