@@ -1,0 +1,3 @@
+<strong>Website:</strong> <a href="https://github.com/KostasKostogloy/openmuseumproject" target="_blank">https://github.com/KostasKostogloy/openmuseumproject</a><br />
+<strong>iOS Application:</strong> <a href="https://github.com/KostasKostogloy/openmuseumproject/tree/master/mobile/iOS" target="_blank">https://github.com/KostasKostogloy/openmuseumproject/tree/master/mobile/iOS</a><br />
+<strong>Android:</strong> <a href="https://github.com/KostasKostogloy/openmuseumproject/tree/master/mobile/Android" target="_blank">https://github.com/KostasKostogloy/openmuseumproject/tree/master/mobile/Android</a><br />

@@ -15,7 +15,7 @@
         $this->widget('zii.widgets.grid.CGridView', array(
             'id' => 'institution-grid',
             'itemsCssClass' => 'table table-striped table-condensed table-bordered',
-            'dataProvider' => $model->search(),
+            'dataProvider' => $model->searchAdmin(),
             'filter' => $model,
             'pager' => array(
                 'header' => '',

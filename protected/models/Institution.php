@@ -125,6 +125,36 @@ class Institution extends CActiveRecord
                         'pagination' => array('pageSize'=>4)
 		));
 	}
+        
+        public function searchAdmin()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('GID',$this->GID);
+		$criteria->compare('NAMEGRK',$this->NAMEGRK,true);
+		$criteria->compare('ADDRESS',$this->ADDRESS,true);
+		$criteria->compare('PHONE',$this->PHONE,true);
+		$criteria->compare('DIMOS',$this->DIMOS,true);
+		$criteria->compare('NEWCAT',$this->NEWCAT,true);
+		$criteria->compare('NEWSUBCAT',$this->NEWSUBCAT,true);
+		$criteria->compare('dbpedia_url',$this->dbpedia_url,true);
+		$criteria->compare('abstract',$this->abstract,true);
+		$criteria->compare('thumbnail',$this->thumbnail,true);
+		$criteria->compare('WEBSITE',$this->WEBSITE,true);
+		$criteria->compare('wikipedia',$this->wikipedia,true);
+		$criteria->compare('POINT_X',$this->POINT_X,true);
+		$criteria->compare('POINT_Y',$this->POINT_Y,true);
+		$criteria->compare('published',$this->published);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+                        'pagination' => array('pageSize'=>10)
+		));
+	}
+        
 	public function searchMuseums()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.

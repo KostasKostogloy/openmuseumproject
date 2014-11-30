@@ -21,7 +21,7 @@ class SiteController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'museums', 'art', 'theaters', 'idrimata', 'contact', 'about', 'error', 'captcha', 'area', 'position', 'markers', 'nearme'),
+                'actions' => array('index', 'museums', 'art', 'theaters', 'idrimata', 'contact', 'about', 'error', 'captcha', 'area', 'position', 'markers', 'nearme', 'opendata'),
                 'users' => array('*'),
             ),
             array('deny', // deny all users
@@ -129,6 +129,9 @@ class SiteController extends Controller {
         $this->render('nearme');
     }
 
+    public function actionOpendata() {
+        $this->render('opendata');
+    }
     /**
      * About this project information page
      */

@@ -10,7 +10,7 @@
             <a href="<?= Yii::app()->createUrl('user/admin') ?>"><span class="glyphicon glyphicon-user"></span> Χρήστες</a>
         </li>
         <li>
-            <a href="#"><span class="glyphicon glyphicon-stats"></span> Στατιστικά</a>
+            <a href="<?= Yii::app()->createUrl('site/index'); ?>" target="_blank"><span class="glyphicon glyphicon-globe"></span> Frontend</a>
         </li>
         <li>
             <a class="text-danger" href="<?=$this->createUrl('user/logout')?>"><span class="glyphicon glyphicon-off"></span> Αποσύνδεση</a>
