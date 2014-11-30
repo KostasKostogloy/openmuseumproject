@@ -6,9 +6,9 @@
         <?php $this->renderPartial('//user/_sidebar');?>
     </div>
     <div class="col-md-9">
-        <?php echo CHtml::link('<span class="glyphicon glyphicon-plus-sign"></span> Import Data', array('institution/create'), array('class' => 'btn btn-success btn-sm pull-right')); ?> 
-        <?php echo CHtml::link('<span class="glyphicon glyphicon-sort"></span> Fetch Data', array('institution/admin'), array('class' => 'btn btn-danger btn-sm pull-right')); ?>
-        <?php echo CHtml::link('<span class="glyphicon glyphicon-import"></span> Import Data', array('data/index'), array('class' => 'btn btn-danger btn-sm pull-right')); ?> 
+        <?php echo CHtml::link('<span class="glyphicon glyphicon-plus-sign"></span> Προσθήκη', array('institution/create'), array('class' => 'btn btn-success btn-sm pull-right', 'style' => 'margin-left: 5px;')); ?> 
+        <?php echo CHtml::link('<span class="glyphicon glyphicon-sort"></span> Ενημέρωση', array('institution/admin'), array('class' => 'btn btn-danger btn-sm pull-right', 'style' => 'margin-left: 5px;')); ?>
+        <?php echo CHtml::link('<span class="glyphicon glyphicon-import"></span> Εισαγωγή Δεδομένων', array('data/index'), array('class' => 'btn btn-danger btn-sm pull-right', 'style' => 'margin-left: 5px;')); ?> 
         <h3 class="text-primary" style="margin-top:0;"><?= Yii::t('data', 'Διαχείρηση Ινστιτούτων'); ?></h3>
         <hr />
         <?php

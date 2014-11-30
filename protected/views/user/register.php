@@ -4,12 +4,12 @@
 ?>
 
 <div class="row">
-    <h2 class="text-center text-primary">Δημιουργία νέου χρήστη</h2>
     <div class="col-md-3">
         <?php $this->renderPartial('_sidebar');?>
     </div>
     <div class="col-md-9">
-        <br />
+        <h3 class="text-primary" style="margin-top:0;">Δημιουργία νέου χρήστη</h3>
+        <hr />
         <div class="form form-horizontal well">
             <?php
 

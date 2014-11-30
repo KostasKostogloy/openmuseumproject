@@ -4,13 +4,13 @@
             <a href="<?=Yii::app()->createUrl('user/index');?>"><span class="glyphicon glyphicon-dashboard"></span> Διαχείριση</a>
         </li>
         <li <?php if (($this->id == 'institution') && ($this->action->id == 'admin')) echo 'class="active"';?>>
-            <a href="<?= Yii::app()->createUrl('institution/index') ?>"><span class="glyphicon glyphicon-book"></span> Ινστιτούτων</a>
+            <a href="<?= Yii::app()->createUrl('institution/index') ?>"><span class="glyphicon glyphicon-screenshot"></span> Ινστιτούτα</a>
         </li>
         <li <?php if (($this->id == 'user') && ($this->action->id == 'admin')) echo 'class="active"';?>>
-            <a href="<?= Yii::app()->createUrl('user/admin') ?>"><span class="glyphicon glyphicon-lock"></span> Πρόσβασης</a>
+            <a href="<?= Yii::app()->createUrl('user/admin') ?>"><span class="glyphicon glyphicon-user"></span> Χρήστες</a>
         </li>
         <li>
-            <a href="dbpedia.php"><span class="glyphicon glyphicon-file"></span> Στατιστικά</a>
+            <a href="#"><span class="glyphicon glyphicon-stats"></span> Στατιστικά</a>
         </li>
         <li>
             <a class="text-danger" href="<?=$this->createUrl('user/logout')?>"><span class="glyphicon glyphicon-off"></span> Αποσύνδεση</a>

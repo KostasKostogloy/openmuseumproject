@@ -11,8 +11,8 @@
         <h3 class="text-primary" style="margin-top:0;"><?= Yii::t('data', 'Διαχείρηση Ινστιτούτων'); ?></h3>
         <hr />
         <div class="alert alert-dismissable alert-success">
-            <strong>Well done!</strong><br /><br />
-            You successfully imported <?php echo $num_records; ?> new records
+            <strong>Συγχαρητήρια!</strong><br /><br />
+            <?php echo $num_records; ?> εγγραφές ενημερώθηκαν με επιτυχία
         </div>
     </div>
 </div>

@@ -10,9 +10,10 @@
     </div>
     <div class="col-md-9">
         <h3 class="text-primary" style="margin-top:0;"><?= Yii::t('data', 'Διαχείρηση Δεδομένων'); ?></h3>
+        <hr />
         <div class="alert alert-dismissable alert-success">
-            <strong>Well done!</strong><br /><br />
-            You successfully imported <?php echo $num_records;?> records
+            <strong>Συγχαρητήρια!</strong><br /><br />
+            <?php echo $num_records;?> εγγραφές εισήχθησαν με επιτυχία
         </div>
     </div>
 </div>

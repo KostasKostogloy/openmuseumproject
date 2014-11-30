@@ -8,7 +8,7 @@
         <?php $this->renderPartial('_sidebar');?>
     </div>
     <div class="col-md-9">
-        <a class="btn btn-success btn-sm pull-right" href="<?=Yii::app()->createUrl('user/register');?>"><i class="glyphicon glyphicon-plus-sign"></i> Προσθήκη Χρήστη</a>
+        <a class="btn btn-success btn-sm pull-right" href="<?=Yii::app()->createUrl('user/register');?>"><i class="glyphicon glyphicon-plus-sign"></i> Προσθήκη</a>
         <h3 class="text-primary" style="margin-top:0;">Διαχείριση Χρηστών</h3>
         <hr />
         <?php

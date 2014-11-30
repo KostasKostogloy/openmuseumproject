@@ -19,99 +19,67 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'GID'); ?>
-		<?php echo $form->textField($model,'GID'); ?>
-		<?php echo $form->error($model,'GID'); ?>
-	</div>
+            <p><?php echo $form->labelEx($model,'GID'); ?></p>
+            <p><?php echo $form->textField($model,'GID', array('class'=>'form-control')); ?></p>
+            <p><?php echo $form->error($model,'GID'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'NAMEGRK'); ?>
-		<?php echo $form->textField($model,'NAMEGRK',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'NAMEGRK'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'NAMEGRK'); ?></p>
+            <p><?php echo $form->textField($model,'NAMEGRK',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'NAMEGRK'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ADDRESS'); ?>
-		<?php echo $form->textField($model,'ADDRESS',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'ADDRESS'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'ADDRESS'); ?></p>
+		<p><?php echo $form->textField($model,'ADDRESS',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'ADDRESS'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'PHONE'); ?>
-		<?php echo $form->textField($model,'PHONE',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'PHONE'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'PHONE'); ?></p>
+		<p><?php echo $form->textField($model,'PHONE',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'PHONE'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'DIMOS'); ?>
-		<?php echo $form->textField($model,'DIMOS',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'DIMOS'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'DIMOS'); ?></p>
+		<p><?php echo $form->textField($model,'DIMOS',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'DIMOS'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'NEWCAT'); ?>
-		<?php echo $form->textField($model,'NEWCAT',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'NEWCAT'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'NEWCAT'); ?></p>
+		<p><?php echo $form->textField($model,'NEWCAT',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'NEWCAT'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'NEWSUBCAT'); ?>
-		<?php echo $form->textField($model,'NEWSUBCAT',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'NEWSUBCAT'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'NEWSUBCAT'); ?></p>
+		<p><?php echo $form->textField($model,'NEWSUBCAT',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'NEWSUBCAT'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'dbpedia_url'); ?>
-		<?php echo $form->textField($model,'dbpedia_url',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'dbpedia_url'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'dbpedia_url'); ?></p>
+		<p><?php echo $form->textField($model,'dbpedia_url',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'dbpedia_url'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'abstract'); ?>
-		<?php echo $form->textArea($model,'abstract',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'abstract'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'abstract'); ?></p>
+		<p><?php echo $form->textArea($model,'abstract',array('rows'=>6, 'cols'=>50,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'abstract'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'thumbnail'); ?>
-		<?php echo $form->textField($model,'thumbnail',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'thumbnail'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'thumbnail'); ?></p>
+		<p><?php echo $form->textField($model,'thumbnail',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'thumbnail'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'WEBSITE'); ?>
-		<?php echo $form->textField($model,'WEBSITE',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'WEBSITE'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'WEBSITE'); ?></p>
+		<p><?php echo $form->textField($model,'WEBSITE',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'WEBSITE'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'wikipedia'); ?>
-		<?php echo $form->textField($model,'wikipedia',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'wikipedia'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'wikipedia'); ?></p>
+		<p><?php echo $form->textField($model,'wikipedia',array('size'=>60,'maxlength'=>256,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'wikipedia'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'POINT_X'); ?>
-		<?php echo $form->textField($model,'POINT_X',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'POINT_X'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'POINT_X'); ?></p>
+		<p><?php echo $form->textField($model,'POINT_X',array('size'=>32,'maxlength'=>32,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'POINT_X'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'POINT_Y'); ?>
-		<?php echo $form->textField($model,'POINT_Y',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'POINT_Y'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'POINT_Y'); ?></p>
+		<p><?php echo $form->textField($model,'POINT_Y',array('size'=>32,'maxlength'=>32,'class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'POINT_Y'); ?></p>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'published'); ?>
-		<?php echo $form->textField($model,'published'); ?>
-		<?php echo $form->error($model,'published'); ?>
-	</div>
+		<p><?php echo $form->labelEx($model,'published'); ?></p>
+		<p><?php echo $form->textField($model,'published', array('class'=>'form-control')); ?></p>
+		<p><?php echo $form->error($model,'published'); ?></p>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+		<p><?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-primary')); ?>
 
 <?php $this->endWidget(); ?>
 
