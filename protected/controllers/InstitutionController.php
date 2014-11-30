@@ -155,6 +155,9 @@ class InstitutionController extends Controller {
                     if(isset($response_a->results[0])) {
                         $modelInstitution->POINT_X = $response_a->results[0]->geometry->location->lat;
                         $modelInstitution->POINT_Y = $response_a->results[0]->geometry->location->lng;
+                    } else {
+                        $modelInstitution->POINT_X = '';
+                        $modelInstitution->POINT_Y = '';
                     }
                 }
                 
