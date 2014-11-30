@@ -15,10 +15,11 @@
  * @property string $dbpedia_url
  * @property string $abstract
  * @property string $thumbnail
- * @property string $website
+ * @property string $WEBSITE
  * @property string $wikipedia
- * @property string $latitude
- * @property string $longitude
+ * @property string $POINT_X
+ * @property string $POINT_Y
+ * @property integer $published
  */
 class Institution extends CActiveRecord
 {
@@ -38,13 +39,13 @@ class Institution extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('GID, NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, abstract, thumbnail, website, wikipedia, latitude, longitude', 'safe'),
-			array('GID', 'numerical', 'integerOnly'=>true),
-			array('NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, thumbnail, website, wikipedia', 'length', 'max'=>256),
-			array('latitude, longitude', 'length', 'max'=>32),
+			array('GID, NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, abstract, thumbnail, WEBSITE, wikipedia, POINT_X, POINT_Y, published', 'safe'),
+			array('GID, published', 'numerical', 'integerOnly'=>true),
+			array('NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, thumbnail, WEBSITE, wikipedia', 'length', 'max'=>256),
+			array('POINT_X, POINT_Y', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, GID, NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, abstract, thumbnail, website, wikipedia, latitude, longitude', 'safe', 'on'=>'search'),
+			array('id, GID, NAMEGRK, ADDRESS, PHONE, DIMOS, NEWCAT, NEWSUBCAT, dbpedia_url, abstract, thumbnail, WEBSITE, wikipedia, POINT_X, POINT_Y, published', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,10 +77,11 @@ class Institution extends CActiveRecord
 			'dbpedia_url' => 'Dbpedia Url',
 			'abstract' => 'Abstract',
 			'thumbnail' => 'Thumbnail',
-			'website' => 'Website',
+			'WEBSITE' => 'Website',
 			'wikipedia' => 'Wikipedia',
-			'latitude' => 'Latitude',
-			'longitude' => 'Longitude',
+			'POINT_X' => 'Point X',
+			'POINT_Y' => 'Point Y',
+			'published' => 'Published',
 		);
 	}
 
@@ -112,10 +114,11 @@ class Institution extends CActiveRecord
 		$criteria->compare('dbpedia_url',$this->dbpedia_url,true);
 		$criteria->compare('abstract',$this->abstract,true);
 		$criteria->compare('thumbnail',$this->thumbnail,true);
-		$criteria->compare('website',$this->website,true);
+		$criteria->compare('WEBSITE',$this->WEBSITE,true);
 		$criteria->compare('wikipedia',$this->wikipedia,true);
-		$criteria->compare('latitude',$this->latitude,true);
-		$criteria->compare('longitude',$this->longitude,true);
+		$criteria->compare('POINT_X',$this->POINT_X,true);
+		$criteria->compare('POINT_Y',$this->POINT_Y,true);
+		$criteria->compare('published',$this->published);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

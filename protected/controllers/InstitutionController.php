@@ -135,6 +135,29 @@ class InstitutionController extends Controller {
             // if it doesn't exists save it to institution table
             if (empty($resultInstitution)) {
                 
+                $modelInstitution->attributes = $instanceImportedData->attributes;
+
+                // replace spaces with +
+                $address = str_replace(' ', '+', $instanceImportedData->ADDRESS);
+                
+                // find coordinates from address
+                if(!empty($instanceImportedData->ADDRESS)) {
+                    $url = "http://maps.google.com/maps/api/geocode/json?address=".$address."&sensor=false&region=Greece";
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, $url);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                    curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
+                    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+                    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                    $response = curl_exec($ch);
+                    curl_close($ch);
+                    $response_a = json_decode($response);
+                    if(isset($response_a->results[0])) {
+                        $modelInstitution->POINT_X = $response_a->results[0]->geometry->location->lat;
+                        $modelInstitution->POINT_Y = $response_a->results[0]->geometry->location->lng;
+                    }
+                }
+                
                 // init NLP DBpediaSpotlight
                 $api = new DBpediaSpotlight;
                 //$api->init_nlp('Αρχαιολογικό Μουσείο Θεσσαλονίκης');
@@ -146,7 +169,6 @@ class InstitutionController extends Controller {
                     $dbpedia_uri = (isset($entity[0]['name'])) ? $entity[0]['name'] : '';
                     $modelInstitution->dbpedia_url = $dbpedia_uri;
                 }                
-                $modelInstitution->attributes = $instanceImportedData->attributes;
                 $modelInstitution->save();
                 $num_records++;
             }

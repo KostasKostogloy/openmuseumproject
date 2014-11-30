@@ -67,8 +67,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'website'); ?>
-		<?php echo $form->textField($model,'website',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->label($model,'WEBSITE'); ?>
+		<?php echo $form->textField($model,'WEBSITE',array('size'=>60,'maxlength'=>256)); ?>
 	</div>
 
 	<div class="row">
@@ -77,13 +77,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'latitude'); ?>
-		<?php echo $form->textField($model,'latitude',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->label($model,'POINT_X'); ?>
+		<?php echo $form->textField($model,'POINT_X',array('size'=>32,'maxlength'=>32)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'longitude'); ?>
-		<?php echo $form->textField($model,'longitude',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->label($model,'POINT_Y'); ?>
+		<?php echo $form->textField($model,'POINT_Y',array('size'=>32,'maxlength'=>32)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'published'); ?>
+		<?php echo $form->textField($model,'published'); ?>
 	</div>
 
 	<div class="row buttons">
