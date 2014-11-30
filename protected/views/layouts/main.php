@@ -8,8 +8,7 @@
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/main.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/media-queries.css" media="screen">
-        <?php Yii::app()->clientScript->scriptMap=array( 'jquery.js'=>'https://code.jquery.com/jquery-1.10.2.min.js',);
-        ?>
+        <?php Yii::app()->clientScript->scriptMap=array( 'jquery.js'=>'https://code.jquery.com/jquery-1.10.2.min.js',);?>
     </head>
     <body>
         <div class="navbar navbar-default navbar-fixed-top">
@@ -44,7 +43,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"><i class="glyphicon glyphicon-open"></i> Ανοιχτά Δεδομένα</a>
+                            <a href="<?= Yii::app()->createUrl('site/opendata'); ?>"><i class="glyphicon glyphicon-open"></i> Ανοιχτά Δεδομένα</a>
                         </li>
                         <li>
                             <a href="<?= Yii::app()->createUrl('site/contact'); ?>"><i class="glyphicon glyphicon-envelope"></i> Επικοινωνία</a>

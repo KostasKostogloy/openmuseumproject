@@ -7,8 +7,7 @@
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/main.css" media="screen">
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/media-queries.css" media="screen">
-        <?php Yii::app()->clientScript->scriptMap=array( 'jquery.js'=>'https://code.jquery.com/jquery-1.10.2.min.js',);
-        ?>
+        <?php Yii::app()->clientScript->scriptMap=array( 'jquery.js'=>'https://code.jquery.com/jquery-1.10.2.min.js',);?>
     </head>
     <body style="padding-top:20px;">
         <div class="container">
