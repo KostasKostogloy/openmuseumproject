@@ -50,20 +50,24 @@
 	<?php echo CHtml::encode($data->thumbnail); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('website')); ?>:</b>
-	<?php echo CHtml::encode($data->website); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('WEBSITE')); ?>:</b>
+	<?php echo CHtml::encode($data->WEBSITE); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('wikipedia')); ?>:</b>
 	<?php echo CHtml::encode($data->wikipedia); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('latitude')); ?>:</b>
-	<?php echo CHtml::encode($data->latitude); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('POINT_X')); ?>:</b>
+	<?php echo CHtml::encode($data->POINT_X); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('longitude')); ?>:</b>
-	<?php echo CHtml::encode($data->longitude); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('POINT_Y')); ?>:</b>
+	<?php echo CHtml::encode($data->POINT_Y); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('published')); ?>:</b>
+	<?php echo CHtml::encode($data->published); ?>
 	<br />
 
 	*/ ?>

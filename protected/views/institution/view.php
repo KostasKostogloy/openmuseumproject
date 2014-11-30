@@ -32,9 +32,10 @@ $this->menu=array(
 		'dbpedia_url',
 		'abstract',
 		'thumbnail',
-		'website',
+		'WEBSITE',
 		'wikipedia',
-		'latitude',
-		'longitude',
+		'POINT_X',
+		'POINT_Y',
+		'published',
 	),
 )); ?>

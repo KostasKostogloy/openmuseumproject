@@ -80,9 +80,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'website'); ?>
-		<?php echo $form->textField($model,'website',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'website'); ?>
+		<?php echo $form->labelEx($model,'WEBSITE'); ?>
+		<?php echo $form->textField($model,'WEBSITE',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'WEBSITE'); ?>
 	</div>
 
 	<div class="row">
@@ -92,15 +92,21 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'latitude'); ?>
-		<?php echo $form->textField($model,'latitude',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'latitude'); ?>
+		<?php echo $form->labelEx($model,'POINT_X'); ?>
+		<?php echo $form->textField($model,'POINT_X',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->error($model,'POINT_X'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'longitude'); ?>
-		<?php echo $form->textField($model,'longitude',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'longitude'); ?>
+		<?php echo $form->labelEx($model,'POINT_Y'); ?>
+		<?php echo $form->textField($model,'POINT_Y',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->error($model,'POINT_Y'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'published'); ?>
+		<?php echo $form->textField($model,'published'); ?>
+		<?php echo $form->error($model,'published'); ?>
 	</div>
 
 	<div class="row buttons">

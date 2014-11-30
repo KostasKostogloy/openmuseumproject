@@ -8,7 +8,7 @@ $cs->registerScript('popups_etc',
     $(\'.bs-component [data-toggle="tooltip"]\').tooltip();
 ',  CClientScript::POS_LOAD);
 
-$institutes = Institution::model()->findAll('latitude != "" AND longitude != ""');
+$institutes = Institution::model()->findAll('POINT_X != "" AND POINT_Y != ""');
 $LatLng = '';
 $marker = '';
 $markerContent = '';
@@ -30,7 +30,7 @@ foreach ($institutes as $key => $institute)
             break;
     endswitch;
     
-    $LatLng .= 'var LatLng' . $key . ' = new google.maps.LatLng(' . $institute->latitude . ',' . $institute->longitude . ');
+    $LatLng .= 'var LatLng' . $key . ' = new google.maps.LatLng(' . $institute->POINT_X . ',' . $institute->POINT_Y . ');
     ';
     $marker .= 'marker' . $key . ' = new google.maps.Marker({position: LatLng' . $key . ', map: map, title: \''.$institute->NAMEGRK.'\',icon: "'.$icon.'"});
     ';
