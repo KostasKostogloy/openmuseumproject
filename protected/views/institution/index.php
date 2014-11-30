@@ -1,7 +1,6 @@
 <?php
 /* @var $this InstitutionsController */
 ?>
-<<<<<<< HEAD
 <div class="row">
     <h2 class="text-center text-primary">Διαχείρηση Ινστιτούτων</h2>
    <div class="col-md-3">
