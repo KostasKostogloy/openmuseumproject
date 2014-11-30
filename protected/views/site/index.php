@@ -58,7 +58,7 @@ Yii::app()->clientScript->registerScript('markers','
         ' . $LatLng . '
         var LatLngInitial= new google.maps.LatLng( 40.63753445137685 , 22.945375442504883);
         var myOptions = {
-            zoom: 13,
+            zoom: 15,
             center: LatLngInitial,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
