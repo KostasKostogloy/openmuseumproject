@@ -110,8 +110,11 @@ class InstitutionController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
+        $model = new Institution('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Institution']))
+            $model->attributes = $_GET['Institution'];
 
-        $model = new Institution();
         $this->render('index', array('model' => $model));
     }
 

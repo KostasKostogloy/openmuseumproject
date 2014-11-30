@@ -1,5 +1,6 @@
 <?php
 /* @var $this InstitutionsController */
+/* @var $model Institution */
 ?>
 <div class="row">
    <div class="col-md-3">
