@@ -35,5 +35,13 @@
 @media (max-width: 767px) {
 }
 
+@media (min-width: 767px) {
+    #search-dropdown
+    {
+        margin-top: -20px;
+    }
+    
+}
+
 /* Phones */
 @media (max-width: 480px) { }

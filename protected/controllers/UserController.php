@@ -74,16 +74,15 @@ class UserController extends Controller {
         $model = new User;
         if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];
-            $model->role = 'registered';
             if ($model->validate()) {
                 $encryption = new Encryption();
                 $model->password = $encryption->create_hash($model->password);
                 $model->save();
                 $message = Yii::t('app', 'Αγαπητέ ') .
                         $model->username .
-                        Yii::t('app', ', έχεται εγγραφεί επιτυχώς στην διαδικτυακή κοινότητα Συνεισφέρω');
+                        Yii::t('app', ', έχεται εγγραφεί επιτυχώς στην διαδικτυακή κοινότητα Open Culture Project');
                 SAEmail::sendMail($model->email, Yii::t('app', 'Έπιβεβαίωση εγγραφής'), $message);
-                $this->redirect(array('user/login'));
+                $this->redirect(array('user/index'));
             }
         }
         $model->password = null;
@@ -121,6 +120,8 @@ class UserController extends Controller {
 
         if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];
+            $encryption = new Encryption();
+            $model->password = $encryption->create_hash($model->password);
             if ($model->save())
                 $this->redirect(array('admin'));
         }

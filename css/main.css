@@ -54,13 +54,7 @@ body{
 }
 
 footer{
-	margin:5em 0
-}
-
-footer li{
-	float:left;
-	margin-right:1.5em;
-	margin-bottom:1.5em
+	margin:5em 0;
 }
 
 footer p{
@@ -187,4 +181,8 @@ footer p{
     width:100%;
     height:400px;
     margin: 20px auto 20px auto;
+}
+
+.navbar-nav > li {
+    font-size: 13px;
 }
