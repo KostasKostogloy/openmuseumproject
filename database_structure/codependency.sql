@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 30 Νοε 2014 στις 01:02:44
+-- Χρόνος δημιουργίας: 30 Νοε 2014 στις 01:44:37
 -- Έκδοση διακομιστή: 5.6.21
 -- Έκδοση PHP: 5.5.19
 
@@ -159,10 +159,10 @@ INSERT INTO `imported_data` (`data_id`, `GID`, `AA`, `TNAME`, `NAMEGRK`, `ADDRES
 -- --------------------------------------------------------
 
 --
--- Δομή πίνακα για τον πίνακα `institutions`
+-- Δομή πίνακα για τον πίνακα `institution`
 --
 
-CREATE TABLE IF NOT EXISTS `institutions` (
+CREATE TABLE IF NOT EXISTS `institution` (
 `id` int(11) NOT NULL,
   `GID` int(11) NOT NULL,
   `NAMEGRK` varchar(256) NOT NULL,
@@ -181,10 +181,10 @@ CREATE TABLE IF NOT EXISTS `institutions` (
 ) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 
 --
--- Άδειασμα δεδομένων του πίνακα `institutions`
+-- Άδειασμα δεδομένων του πίνακα `institution`
 --
 
-INSERT INTO `institutions` (`id`, `GID`, `NAMEGRK`, `ADDRESS`, `PHONE`, `DIMOS`, `NEWCAT`, `NEWSUBCAT`, `dbpedia_url`, `abstract`, `thumbnail`, `website`, `wikipedia`, `latitude`, `longitude`) VALUES
+INSERT INTO `institution` (`id`, `GID`, `NAMEGRK`, `ADDRESS`, `PHONE`, `DIMOS`, `NEWCAT`, `NEWSUBCAT`, `dbpedia_url`, `abstract`, `thumbnail`, `website`, `wikipedia`, `latitude`, `longitude`) VALUES
 (1, 186, 'Ροτόντα', 'Καμάρα', '0', 'ΘΕΣΣΑΛΟΝΙΚΗ', 'ΠΟΛΙΤΙΣΜΟΣ', 'ΜΟΥΣΕΙΑ', '', '', '', '', '', '', ''),
 (2, 9, 'TinT', 'Χρ. Σμύρνης 13', '2310240000', 'ΘΕΣΣΑΛΟΝΙΚΗ', 'ΠΟΛΙΤΙΣΜΟΣ', 'ΑΙΘΟΥΣΕΣ ΤΕΧΝΗΣ', '', '', '', '', '', '', ''),
 (3, 10, 'Λόλα Νικολάου', 'Τσιμισκή 52', '2310240000', 'ΘΕΣΣΑΛΟΝΙΚΗ', 'ΠΟΛΙΤΙΣΜΟΣ', 'ΑΙΘΟΥΣΕΣ ΤΕΧΝΗΣ', '', '', '', '', '', '', ''),
@@ -307,9 +307,9 @@ ALTER TABLE `imported_data`
  ADD PRIMARY KEY (`data_id`);
 
 --
--- Ευρετήρια για πίνακα `institutions`
+-- Ευρετήρια για πίνακα `institution`
 --
-ALTER TABLE `institutions`
+ALTER TABLE `institution`
  ADD PRIMARY KEY (`id`);
 
 --
@@ -322,9 +322,9 @@ ALTER TABLE `institutions`
 ALTER TABLE `imported_data`
 MODIFY `data_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=90;
 --
--- AUTO_INCREMENT για πίνακα `institutions`
+-- AUTO_INCREMENT για πίνακα `institution`
 --
-ALTER TABLE `institutions`
+ALTER TABLE `institution`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=90;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
