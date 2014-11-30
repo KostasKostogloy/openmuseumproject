@@ -17,6 +17,12 @@
             'itemsCssClass' => 'table table-striped',
             'dataProvider' => $model->search(),
             'filter' => $model,
+            'pager' => array(
+                'header' => '',
+                'htmlOptions' => array('class'=>'pagination'),
+                'selectedPageCssClass' => 'active',
+            ),
+            'pagerCssClass'=> 'pagination pull-right',
             'columns' => array(
                 'username',
                 'email',

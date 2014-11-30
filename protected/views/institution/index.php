@@ -17,14 +17,17 @@
             'itemsCssClass' => 'table table-striped table-condensed table-bordered',
             'dataProvider' => $model->search(),
             'filter' => $model,
+            'pager' => array(
+                'header' => '',
+                'htmlOptions' => array('class'=>'pagination'),
+                'selectedPageCssClass' => 'active',
+            ),
+            'pagerCssClass'=> 'pagination pull-right',
             'columns' => array(
                 'NAMEGRK',
                 'ADDRESS',
                 'PHONE',
-                //'DIMOS',
-                //'NEWCAT',
-                //'NEWSUBCAT',
-                'dbpedia_url',
+                //'dbpedia_url',
                 array(
                     'header' => 'Wikipedia',
                     'type'=>'raw',

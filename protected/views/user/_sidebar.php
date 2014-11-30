@@ -3,7 +3,7 @@
         <li <?php if ($this->id == 'user' && $this->action->id == 'index') echo 'class="active"';?>>
             <a href="<?=Yii::app()->createUrl('user/index');?>"><span class="glyphicon glyphicon-dashboard"></span> Διαχείριση</a>
         </li>
-        <li <?php if (($this->id == 'institution') && ($this->action->id == 'admin')) echo 'class="active"';?>>
+        <li <?php if ($this->id == 'institution') echo 'class="active"';?>>
             <a href="<?= Yii::app()->createUrl('institution/index') ?>"><span class="glyphicon glyphicon-screenshot"></span> Ινστιτούτα</a>
         </li>
         <li <?php if (($this->id == 'user') && ($this->action->id == 'admin')) echo 'class="active"';?>>
