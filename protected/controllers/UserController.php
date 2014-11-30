@@ -215,13 +215,7 @@ class UserController extends Controller {
 
             // validate user input and redirect administrator to admin/site/index and others to previous page
             if ($model->validate() && $model->login()) {
-                if (Yii::app()->user->checkAccess('administrator')) {
-                    // redirect to the administrator dashboard
-                    $this->redirect(array('user/index'));
-                } else {
-                    //redirect to the previous page
-                    $this->redirect(Yii::app()->user->returnUrl);
-                }
+                $this->redirect(array('user/index'));
             }
         }
         $model->password = null;
