@@ -63,7 +63,7 @@ class InstitutionController extends Controller {
         if (isset($_POST['Institution'])) {
             $model->attributes = $_POST['Institution'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('create', array(
@@ -85,7 +85,7 @@ class InstitutionController extends Controller {
         if (isset($_POST['Institution'])) {
             $model->attributes = $_POST['Institution'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('update', array(
@@ -198,10 +198,16 @@ class InstitutionController extends Controller {
         $obj = json_decode($json);
         $bindings = $obj->results->bindings;
         
-        $binding_abstract = $bindings[0]->abstract->value;
-        $binding_thumbnail = $bindings[0]->thumbnail->value;
-        $model->abstract = $binding_abstract;
-        $model->thumbnail = $binding_thumbnail;
+        if(!empty($bindings[0]->abstract->value)) {
+            $binding_abstract = $bindings[0]->abstract->value;
+            $model->abstract = $binding_abstract;
+        }
+        
+        if(!empty($bindings[0]->thumbnail->value)) {
+            $binding_thumbnail = $bindings[0]->thumbnail->value;
+            $model->thumbnail = $binding_thumbnail;
+        }
+        
         $model->save();
         
         $this->render('wikipedia', array('model' => $model));
