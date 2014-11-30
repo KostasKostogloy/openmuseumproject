@@ -139,7 +139,7 @@ class InstitutionController extends Controller {
                 $modelInstitution->attributes = $instanceImportedData->attributes;
 
                 // replace spaces with +
-                $address = str_replace(' ', '+', $instanceImportedData->ADDRESS);
+                $address = str_replace(' ', '+', $instanceImportedData->ADDRESS.', Θεσσαλονική, Greece');
                 
                 // find coordinates from address
                 if(!empty($instanceImportedData->ADDRESS)) {

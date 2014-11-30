@@ -1,24 +1,18 @@
 <?php
 /* @var $this DataController */
-/* @var $model ImportedData */
+/* @var $num_records */
 
 ?>
 
-<h1 class="text-primary"><?=Yii::t('data', 'Διαχείρηση Δεδομένων')?></h1>
-
-<?php echo CHtml::link('Import Data', array('data/admin'), array('class' => 'btn btn-danger')); ?>
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-    'id'=>'user-grid',
-    'itemsCssClass'=> 'table table-striped table-condensed table-bordered',
-    'dataProvider'=>$model->search(),
-    'filter'=>$model,
-    'columns'=>array(
-        'NAMEGRK',
-        'ADDRESS',
-        'PHONE',
-        'DIMOS',
-        'NEWCAT',
-        'NEWSUBCAT',
-    ),
-)); ?>
+<div class="row">
+    <div class="col-md-3">
+        <?php $this->renderPartial('//user/_sidebar');?>
+    </div>
+    <div class="col-md-9">
+        <h3 class="text-primary" style="margin-top:0;"><?= Yii::t('data', 'Διαχείρηση Δεδομένων'); ?></h3>
+        <div class="alert alert-dismissable alert-success">
+            <strong>Well done!</strong><br /><br />
+            You successfully imported <?php echo $num_records;?> records
+        </div>
+    </div>
+</div>
