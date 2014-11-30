@@ -31,7 +31,7 @@ Yii::app()->clientScript->registerScript('markers','
 <div class="col-lg-6 text-center">
     <h3 class="text-primary"><?=$model->NAMEGRK?></h3>
     <img class="img-responsive img-thumbnail" src="<?=($model->thumbnail == NULL)? Yii::app()->baseUrl.'/images/placeholder.png':$model->thumbnail;?>"/>
-    <p class="text-info"><?=$model->abstract;?></p>
+    <p class="text-primary"><?=$model->abstract;?></p>
     <p>
         <span class="label label-primary"><?=$model->DIMOS?></span>
         <span class="label label-info"><?=$model->NEWCAT?></span>

@@ -191,3 +191,8 @@ footer p{
 {
     display: none;
 }
+
+a.text-danger
+{
+    color: brown !important;
+}

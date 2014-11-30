@@ -15,8 +15,6 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
             <p><?php echo $form->labelEx($model,'GID'); ?></p>
@@ -75,11 +73,7 @@
 		<p><?php echo $form->textField($model,'POINT_Y',array('size'=>32,'maxlength'=>32,'class'=>'form-control')); ?></p>
 		<p><?php echo $form->error($model,'POINT_Y'); ?></p>
 
-		<p><?php echo $form->labelEx($model,'published'); ?></p>
-		<p><?php echo $form->textField($model,'published', array('class'=>'form-control')); ?></p>
-		<p><?php echo $form->error($model,'published'); ?></p>
-
-		<p><?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-primary')); ?>
+		<p><?php echo CHtml::submitButton($model->isNewRecord ? 'Δημιουργία' : 'Αποθήκευση', array('class'=>'btn btn-primary')); ?>
 
 <?php $this->endWidget(); ?>
 

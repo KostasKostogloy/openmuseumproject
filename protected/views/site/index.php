@@ -104,7 +104,7 @@ Yii::app()->clientScript->registerScript('markers','
 </div>
 
 <div class="col-lg-12">
-    <div class="row">
+    <div>
     <?php
     $institution = new Institution;
     $dataProvider = $institution->search();

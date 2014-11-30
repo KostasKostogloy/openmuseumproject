@@ -26,7 +26,7 @@ class InstitutionController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('index', 'view','xml'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create', 'update', 'admin' and 'delete' actions
@@ -85,7 +85,7 @@ class InstitutionController extends Controller {
         if (isset($_POST['Institution'])) {
             $model->attributes = $_POST['Institution'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('update', array(
@@ -229,6 +229,22 @@ class InstitutionController extends Controller {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+    
+    public function actionXML()
+    {
+        $this->layout = 'none';
+        $xml = new SimpleXMLElement('<xml/>');
+        foreach (Institution::model()->findAll() as $institution)
+        {
+            $i = $xml->addChild('institution');
+            foreach ($institution->attributes as $attributeName => $attributeValue)
+            {
+                $i->{$attributeName} = $attributeValue;
+            }
+        }
+        Header('Content-type: text/xml');
+        print($xml->asXML());
     }
 
 }
