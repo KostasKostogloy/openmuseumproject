@@ -16,7 +16,7 @@
         </div>
     </div>
 </div>
-s
+
 <?php if ($index%2):?>
 <div class="clearfix"></div>
 </div><div class="row" style="margin-top: 30px !important;">
