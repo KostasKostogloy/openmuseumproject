@@ -19,9 +19,9 @@
                         <img src="<?=Yii::app()->baseUrl;?>/images/logo_medium.png" alt="Logo" title="Open Culture Project" />
                     </a>
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
@@ -68,6 +68,7 @@
             <?= $content; ?>
             <footer>
                     <div class="col-lg-12">
+                        <hr />
                         <ul class="list-unstyled">
                             <li class="pull-left"><a class="btn btn-sm btn-default" href="<?= Yii::app()->createUrl('user/login'); ?>" >Διαχείριση</a></li>
                             <li class="pull-right"><a class="btn btn-sm btn-info" href="#top">^</a></li>

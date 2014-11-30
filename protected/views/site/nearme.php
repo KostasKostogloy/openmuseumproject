@@ -7,7 +7,7 @@ $longitude2 = 22.9346466;
 $latitude3 = 40.6522526;
 $longitude3 = 22.9253768;
 
-$institutes = Institution::model()->findAll('latitude != "" AND longitude != ""');
+$institutes = Institution::model()->findAll(' POINT_X != "" AND POINT_Y != ""');
 $LatLng = '';
 $marker = '';
 $markerContent = '';
@@ -29,7 +29,7 @@ foreach ($institutes as $key => $institute)
             break;
     endswitch;
     
-    $LatLng .= 'var LatLng' . $key . ' = new google.maps.LatLng(' . $institute->latitude . ',' . $institute->longitude . ');
+    $LatLng .= 'var LatLng' . $key . ' = new google.maps.LatLng(' . $institute->POINT_X . ',' . $institute->POINT_Y . ');
     ';
     $marker .= 'marker' . $key . ' = new google.maps.Marker({position: LatLng' . $key . ', map: map, title: \''.$institute->NAMEGRK.'\',icon: "'.$icon.'"});
     ';

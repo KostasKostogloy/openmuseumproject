@@ -1,12 +1,6 @@
 <?php
 /* @var $this UserController */
 /* @var $model User */
-
-$this->breadcrumbs=array(
-	'Users'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
 ?>
 
 <div class="row">
@@ -21,3 +15,4 @@ $this->breadcrumbs=array(
         </div> 
     </div>
 </div>
+
